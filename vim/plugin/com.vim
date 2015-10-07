@@ -8,7 +8,7 @@ set fenc=chinese
 set encoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,gb18030
 
-colorscheme desert
+colorscheme darkblue
 set helplang=en
 
 filetype plugin indent on
