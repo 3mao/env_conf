@@ -11,6 +11,13 @@ set fileencodings=utf-8,gb2312,gbk,gb18030
 colorscheme darkblue
 set helplang=en
 
+"use 4 space for indent,for python
+setlocal et sta sw=4 sts=4
+" et  expandtab,将tab键展开成空格
+" sta  smartab,在行首按TAB将加入sw个空格
+" sw  shiftwidth,自动缩进插入的空格数
+" sts  softabstop,使用或自动插入或删除相应的空格数
+
 filetype plugin indent on
 
 "ctags --c++-kinds=+p --fields=+iaS --extra=+q -R
