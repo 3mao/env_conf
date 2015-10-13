@@ -4,9 +4,21 @@ set nu
 set cursorline
 set backspace=indent,eol,start
 
+"|:help encoding-values|列出Vim支持的所有编码。 
 set fenc=chinese
+"encoding（enc）：encoding是Vim的内部使用编码，
+"encoding的设置会影响Vim内部的Buffer、消息文字等。
+"在Unix环境下，encoding的默认设置等于locale；
+"Windows环境下会和当前代码页相同。在中文Windows环境下encoding的默认设置是cp936（GBK）。 
 set encoding=utf-8
+" fileencodings（fencs）：Vim在打开文件时会根据fileencodings选项来识别文件编码，
+" fileencodings可以同时设置多个编码，Vim会根据设置的顺序来猜测所打开文件的编码。 
 set fileencodings=utf-8,gb2312,gbk,gb18030
+"Vim在保存新建文件时会根据fileencoding的设置编码来保存。如果是打开已有文件，
+"Vim会根据打开文件时所识别的编码来保存，除非在保存时重新设置fileencoding。 
+set fileencoding=utf-8
+"termencoding（tenc）：在终端环境下使用Vim时，通过termencoding项来告诉Vim终端所使用的编码,注意与crt,putty等设置编码的一致。 
+set  termencoding=utf-8
 
 colorscheme darkblue
 set helplang=en
