@@ -5,9 +5,36 @@
 
 export LC_ALL=C
 
-aix_info(){
+AIX_Info(){
+#lsdev 显示系统中的设备列表
+#lsattr 显示系统中的设备属性
+#lscfg  显示设备的配置
+#prtconf 系统整个配置,是ksh脚本
+	
 echo 
+echo "[CPU信息]"
+lcnum=$(pmcycles -m |wc -l )
+pcnum=$(lsdev -Cc processor | grep Available | wc -l)
+ccores=$[$lcnum/$pcnum]
+ccspeed=$(lsdev -Sa -Cc processor |perl  -anle  '$hz=`lsattr -El $F[0]  -a frequency -F value`;print "\t\t$F[0]\t",$hz/1000/1000,"MHz"')
+echo "逻辑CPU的个数：" ${lcnum}"逻辑CPU"
+echo "逻辑CPU可用数：" $(bindprocessor -q|sed 's/The available processors are: //')
+echo "物理CPU的个数：" ${pcnum}"物理CPU"
+echo "CPU核数：" $ccores"核"
+echo "CPU主频：" 
+echo "$ccspeed"
 
+
+echo
+echo "[内存信息]"
+msize=`lsattr -El mem0 | awk '/^size/ {print $2/1024}'`
+echo "内存总大小："${msize}
+
+
+echo 
+echo "[文件系统]"
+df -k
+df -k 2>&1|grep  -v '-'|grep  -v 'Permission'|awk  'NR>1{all+=$2;use+=$5}END{print "总文件系统使用率:"use*100/all"%"}'
 }
 
 linux_info(){
