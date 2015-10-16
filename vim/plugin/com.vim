@@ -32,7 +32,7 @@ setlocal et sta sw=4 sts=4
 
 filetype plugin indent on
 
-"ctags --c++-kinds=+p --fields=+iaS --extra=+q -R
+ctags --c++-kinds=+p --fields=+iaS --extra=+q -R
 "全能插件要通过执行这个ctags命令才可以用、且要求ctags>=5.6
 set completeopt=longest,menu
  let OmniCpp_MayCompleteDot=1    "  打开  . 操作符
@@ -48,17 +48,17 @@ let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 "NERDTree默认没有打开，必须手动激活
-"map <F8>:NERDTree<cr>
-"map <F9>:NERDTreeClose<cr>
+map <F8>:NERDTree<cr>
+map <F9>:NERDTreeClose<cr>
 
 """"""""""""""""""""""""""""""
 " BufExplorer
 " """"""""""""""""""""""""""""""
-" let g:bufExplorerDefaultHelp=0       " Do not show default help.
-" let g:bufExplorerShowRelativePath=1  " Show relative paths.
-" let g:bufExplorerSortBy='mru'        " Sort by most recently used.
-" let g:bufExplorerSplitRight=0        " Split left.
-" let g:bufExplorerSplitVertical=1     " Split vertically.
-" let g:bufExplorerSplitVertSize = 30  " Split width
-" let g:bufExplorerUseCurrentWindow=1  " Open in new window.
-" autocmd BufWinEnter \[Buf\ List\] setl nonumber 
+ let g:bufExplorerDefaultHelp=0       " Do not show default help.
+ let g:bufExplorerShowRelativePath=1  " Show relative paths.
+ let g:bufExplorerSortBy='mru'        " Sort by most recently used.
+ let g:bufExplorerSplitRight=0        " Split left.
+ let g:bufExplorerSplitVertical=1     " Split vertically.
+ let g:bufExplorerSplitVertSize = 30  " Split width
+ let g:bufExplorerUseCurrentWindow=1  " Open in new window.
+ autocmd BufWinEnter \[Buf\ List\] setl nonumber 
