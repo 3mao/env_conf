@@ -34,8 +34,8 @@ filetype plugin indent on
 
 "ctags --c++-kinds=+p --fields=+iaS --extra=+q -R
 "! ctags  -R --c++-kinds=+p  --fields=+iaS --extra=+q  . 
-map <F11> :!ctags -R --c-kinds=+plx --fields=+lSK --extra=+f -f tags .<CR><CR>
-map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR><CR>
+map <F11> :!ctags -R --c-kinds=+plx --fields=+lSK --extra=+f -f tags . ; cscope –Rkbq  .  <CR><CR>
+map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . ; cscope –Rkbq  .    <CR><CR>
 
 set tags+=tags;
 set tags+=./tags
@@ -81,6 +81,38 @@ map <F9> :NERDTreeClose <CR><CR>
  let g:bufExplorerUseCurrentWindow=1  " Open in new window.
  autocmd BufWinEnter \[Buf\ List\] setl nonumber 
 
-
+"TlistToggle
  map <F3> :TlistToggle <CR><CR>
  map <F4> :TlistClose <CR><CR>
+
+
+"cscope
+"http://blog.csdn.net/dengxiayehu/article/details/6330200
+"cs add /usr/src/linux/cscope.out  导入数据库
+"cs find c|d|e|g|f|i|s|t name
+"s：查找C代码符号
+"g：查找本定义
+"d：查找本函数调用的函数
+"c：查找调用本函数的函数
+"t：查找本字符串
+"e：查找本egrep模式
+"f：查找本文件
+"i：查找包含本文件的文件
+"可以在.vimrc中添加下面的快捷键，免得每次都要输入一长串命令。
+"
+"nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-@>f :cs find f <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-@>i :cs find i ^<C-R>=expand("<cword>")<CR>$<CR>
+"nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+"
+"　　使用时，将光标停留在要查找的对象上，按下<C-@>g，即先按“Ctrl+@”，然后很快再按“g”，将会查找该对象的定义。
+"
+"if filereadable("cscope.out")
+"     cs add cscope.out
+"elseif $CSCOPE_DB != ""
+"      cs add $CSCOPE_DB
+"endif
