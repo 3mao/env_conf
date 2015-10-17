@@ -32,7 +32,25 @@ setlocal et sta sw=4 sts=4
 
 filetype plugin indent on
 
-ctags --c++-kinds=+p --fields=+iaS --extra=+q -R
+"ctags --c++-kinds=+p --fields=+iaS --extra=+q -R
+"! ctags  -R --c++-kinds=+p  --fields=+iaS --extra=+q  . 
+map <F11> :!ctags -R --c-kinds=+plx --fields=+lSK --extra=+f -f tags .<CR><CR>
+map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR><CR>
+
+set tags+=tags;
+set tags+=./tags
+set autochdir  
+"tags用法
+"
+"[{ 转到上一个｛
+"}]转到下一个}
+"{转到上一个空行
+"｝转到下一个空行
+"gd转到光标所指的局部定义
+"* 转到光标所指的单词下一次出现的地方
+"#转到光标所指单词的上一个村出现的地方
+
+
 "全能插件要通过执行这个ctags命令才可以用、且要求ctags>=5.6
 set completeopt=longest,menu
  let OmniCpp_MayCompleteDot=1    "  打开  . 操作符
@@ -48,8 +66,8 @@ let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 "NERDTree默认没有打开，必须手动激活
-map <F8>:NERDTree<cr>
-map <F9>:NERDTreeClose<cr>
+map <F8> :NERDTree <CR><CR>
+map <F9> :NERDTreeClose <CR><CR>
 
 """"""""""""""""""""""""""""""
 " BufExplorer
@@ -62,3 +80,7 @@ map <F9>:NERDTreeClose<cr>
  let g:bufExplorerSplitVertSize = 30  " Split width
  let g:bufExplorerUseCurrentWindow=1  " Open in new window.
  autocmd BufWinEnter \[Buf\ List\] setl nonumber 
+
+
+ map <F3> :TlistToggle <CR><CR>
+ map <F4> :TlistClose <CR><CR>
