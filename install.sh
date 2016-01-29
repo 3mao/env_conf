@@ -24,7 +24,7 @@
 
                                                                                                                                                                       
        cd  pkg
-	cscope  --version || {
+	cscope  --version 2>&1  > /dev/null || {
         tar  -zxvf       cscope-15.8b.tar.gz
 	su  - root <<eof
 	sh ./configure
