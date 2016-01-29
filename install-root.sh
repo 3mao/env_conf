@@ -12,3 +12,12 @@ cd  pkg
 	rm -rf  cscope-15.8b
 	}
 
+	ctags  --version 2>&1  > /dev/null || {	
+        tar  -zxvf  ctags-5.8.tar.gz
+        cd  ctags-5.8
+        sh  ./configure
+        make
+        make install
+        cd ../
+        rm -rf   ctags-5.8
+	}
