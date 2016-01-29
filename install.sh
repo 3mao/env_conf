@@ -22,17 +22,3 @@
 	fi
 	"  >>  ~/.bash_profile  &&  echo "source info cmd"
 
-                                                                                                                                                                      
-       cd  pkg
-	cscope  --version 2>&1  > /dev/null || {
-        tar  -zxvf       cscope-15.8b.tar.gz
-	su  - root <<eof
-	sh ./configure
-	make
-	make install
-eof
-	rm -rf  cscope-15.8b
-	}
-
-
-
