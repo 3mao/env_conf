@@ -2,6 +2,7 @@
 
 	cp  bash_profile ~/.bash_profile  &&  echo "copy .bash_profile success"
 
+	mkdir  -p $HOME/.vim
 	cp -r ./vim/*  ~/.vim  &&  echo "copy vim config "	
 	#curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
