@@ -6,6 +6,7 @@
 	cp -r ./vim/*  ~/.vim  &&  echo "copy vim config "	
 	#curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
+        cp ./vimrc ~/
 	cp  git-completion.bash ~/.git-completion.bash  &&  echo "copy git bash " 
 
         [ -f ~/.bash_profile ] || touch   ~/.bash_profile
