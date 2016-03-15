@@ -2,7 +2,8 @@
 
 
 cd  pkg
-	cscope  --version 2>&1  > /dev/null || {
+	cscope  --version 2  > /dev/null || {
+	yum install  -y ncurses*   curses*  
         tar  -zxvf       cscope-15.8b.tar.gz
         cd  cscope-15.8b
 	sh ./configure
@@ -12,7 +13,7 @@ cd  pkg
 	rm -rf  cscope-15.8b
 	}
 
-	ctags  --version 2>&1  > /dev/null || {	
+	ctags  --version 2  > /dev/null || {	
         tar  -zxvf  ctags-5.8.tar.gz
         cd  ctags-5.8
         sh  ./configure
