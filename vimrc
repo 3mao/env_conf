@@ -120,3 +120,13 @@ map <F9> :NERDTreeClose <CR><CR>
 "elseif $CSCOPE_DB != ""
 "      cs add $CSCOPE_DB
 "endif
+
+
+"pydiction_location
+
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict' 
+let g:pydiction_menu_height = 3 
+if has("autocmd") 
+    autocmd FileType python set complete+=k/path/to/pydiction iskeyword+=.,( 
+endif " has("autocmd") 
+
