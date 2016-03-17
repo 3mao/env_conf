@@ -87,7 +87,7 @@ map <F9> :NERDTreeClose <CR><CR>
 
 "TlistToggle
  map <F3> :TlistToggle <CR><CR>
- map <F4> :TlistClose <CR><CR>
+ " map <F4> :TlistClose <CR><CR>
 
 
 "cscope
