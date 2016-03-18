@@ -130,3 +130,5 @@ if has("autocmd")
     autocmd FileType python set complete+=k/path/to/pydiction iskeyword+=.,( 
 endif " has("autocmd") 
 
+
+au BufRead *.py map <buffer> <F5> :w<CR>:!/usr/bin/env python % <CR>
