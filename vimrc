@@ -132,3 +132,23 @@ endif " has("autocmd")
 
 
 au BufRead *.py map <buffer> <F5> :w<CR>:!/usr/bin/env python % <CR>
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'java' 
+        exec "!javac %" 
+        exec "!java %<"
+    elseif &filetype == 'sh'
+        :!./%
+    elseif &filetype == 'python'
+        :! python ./%
+    else
+        :! ./%
+    endif
+endfunc
