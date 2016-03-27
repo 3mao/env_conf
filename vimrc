@@ -162,3 +162,10 @@ endfunc
 "zM: 作用和 zm 类似，但会关闭子折叠
 "zi: 折叠与打开操作之间的切换命令
 set foldmethod=indent
+
+let g:vimrc_author='luomg' 
+let g:vimrc_email='luomgf@163.com' 
+let g:vimrc_homepage='http://www.3maoer.com' 
+ 
+"自动添加作者信息
+"nmap <F4> :AuthorInfoDetect<cr> 
