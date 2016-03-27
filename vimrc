@@ -152,3 +152,13 @@ func! CompileRunGcc()
         :! ./%
     endif
 endfunc
+
+"启用python_fold的折叠功能
+"zo: 打开光标位置的折叠代码
+"zc: 折叠光标位置的代码
+"zr: 将文件中所有折叠的代码打开
+"zm: 将文件中所有打开的代码折叠
+"zR: 作用和 zr 类似，但会打开子折叠(折叠中的折叠)
+"zM: 作用和 zm 类似，但会关闭子折叠
+"zi: 折叠与打开操作之间的切换命令
+set foldmethod=indent
